@@ -5,7 +5,7 @@ import { EnviarOtp } from '../classes/otp';
 import axios from "axios";
 const database = Database.instance;
 import * as dotenv from "dotenv";
-import { EnviarWhatsAppOtp } from '../classes/whatsapp';
+//import { EnviarWhatsAppOtp } from '../classes/whatsapp';
 dotenv.config();
 
 const token_apis_peru = process.env.TOKEN_APIS_PERU;

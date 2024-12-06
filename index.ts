@@ -8,7 +8,7 @@ import cors from "cors";
 import fs from "fs";
 import * as path from 'path';
 import qrcodeImage from 'qrcode';
-import { Client, LocalAuth } from 'whatsapp-web.js'
+//import { Client, LocalAuth } from 'whatsapp-web.js'
 const server = Server.instance;
 
 declare global {
@@ -21,8 +21,7 @@ if (fs.existsSync(path.join(__dirname, 'public','qr.png'))) {
 }
 
 function iniciar(){
-  console.log("RESET")
-  try {
+/*   try {
     global.client = new Client({
       authStrategy: new LocalAuth({
         clientId: "client-one"
@@ -62,7 +61,7 @@ function iniciar(){
   } catch (error) {
     console.log("Fallo Whastapp");
     console.log(error);
-  }
+  } */
 }
 
 setTimeout(() => {
