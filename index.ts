@@ -8,7 +8,7 @@ import cors from "cors";
 import fs from "fs";
 import * as path from 'path';
 import qrcodeImage from 'qrcode';
-//import { Client, LocalAuth } from 'whatsapp-web.js'
+//import { Client, LocalAuth } from 'whatsapp-web.js';  // Comentado
 const server = Server.instance;
 
 declare global {
@@ -16,12 +16,15 @@ declare global {
   var authed:boolean;
 }
 
+// Si ya no quieres usar el código de whatsapp-web.js, comentamos todo el bloque relacionado
+/*
 if (fs.existsSync(path.join(__dirname, 'public','qr.png'))) {
   fs.unlinkSync(path.join(__dirname, 'public','qr.png'))
 }
 
 function iniciar(){
-/*   try {
+  console.log("RESET")
+  try {
     global.client = new Client({
       authStrategy: new LocalAuth({
         clientId: "client-one"
@@ -61,21 +64,22 @@ function iniciar(){
   } catch (error) {
     console.log("Fallo Whastapp");
     console.log(error);
-  } */
+  }
 }
 
 setTimeout(() => {
   iniciar();
 }, 1000);
+*/
 
-//Bodyparser
+// Bodyparser
 server.app.use(bodyPaser.urlencoded({ extended: true, limit: "5mb" }));
 server.app.use(bodyPaser.json({ limit: "5mb" }));
 
-//CORS
+// CORS
 server.app.use(cors({ origin: true, credentials: true }));
 
-//rutas de servicios
+// rutas de servicios
 server.app.use(express.static(__dirname + "/public"));
 //http://localhost:5000/img/empresas/kfc.png
 server.app.use("/", router);

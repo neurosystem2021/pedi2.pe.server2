@@ -26,8 +26,8 @@ export default class Database {
         globalPool = await createPool({
             host: 'localhost',
             port: 3306,
-            user: production=='prod'?dbUsername:'root', //neuro_delivery
-            password: production=='prod'?dbPassword:'',//
+            user: production=='prod'?dbUsername:'neuro_delivery', //neuro_delivery
+            password: production=='prod'?dbPassword:'NbSXdNcXozLXw2bP',//
             database: 'neuro_delivery',//
             //waitForConnections: true,
             connectionLimit: 150,
