@@ -15,7 +15,7 @@ export async function Empresas(req: Request, res: Response): Promise<Response> {
         let rutaFinal = servidor + rutaAlmacenamiento;
         try {
             let conn = await database.conexionObtener();
-            let resultadoEmpresa = await conn.query("SELECT Gen_Empresa.*,CONCAT('"+rutaFinal+"',Gen_Empresa.ImagenUrl) AS ImagenUrl,Gen_EmpresaSubCategoria.SubCategoria FROM Gen_Empresa " +
+            let resultadoEmpresa = await conn.query("SELECT Gen_Empresa.*,CONCAT('"+rutaFinal+"',Gen_Empresa.ImagenUrl) AS ImagenUrl,Gen_EmpresaSubCategoria.SubCategoria, Gen_EmpresaSubCategoria.ImagenUrlSubCate FROM Gen_Empresa " +
             " INNER JOIN Gen_EmpresaSubCategoria ON Gen_Empresa.IdEmpresaSubCategoria=Gen_EmpresaSubCategoria.IdEmpresaSubCategoria "+
             " WHERE Gen_Empresa.IdEmpresaCategoria="+idCategoria+" AND Gen_Empresa.Anulado = 0 AND Gen_Empresa.DepartamentoUbicacion='"+departamento+"' "+
             " AND Gen_Empresa.RazonSocial LIKE '%" + busqueda + "%'");
