@@ -62,7 +62,7 @@ export async function notificacionesUsuario(req: Request, res: Response): Promis
     if (req.header('APP-Signature') != undefined && req.body.code != undefined) {
         if (req.header('APP-Signature') == 'renzo') {
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let celularbody = req.body.celular;
 
@@ -234,7 +234,7 @@ export async function favoritosUsuario(req: Request, res: Response): Promise<Res
     if (req.header('APP-Signature') != undefined && req.body.code != undefined) {
         if (req.header('APP-Signature') == 'renzo') {
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let celularbody = req.body.celular;
 
@@ -582,7 +582,7 @@ export async function traerDetallePedido(req: Request, res: Response): Promise<R
     if (req.header('APP-Signature') != undefined && req.body.code != undefined && req.body.idpedido != undefined) {
         if (req.header('APP-Signature') == 'renzo') {
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let idpedidobody = req.body.idpedido;
             try {

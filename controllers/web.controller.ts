@@ -255,7 +255,7 @@ export async function traerTodasEmpresasWeb(req: Request, res: Response): Promis
     if (req.header('APP-Signature') != undefined && req.body.code != undefined) {
         if (req.header('APP-Signature') == 'renzo') {
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
 
             try {
@@ -286,7 +286,7 @@ export async function traerTodasEmpresasWebCat(req: Request, res: Response): Pro
         if (req.header('APP-Signature') == 'renzo') {
             let categoriabody = req.body.categoria;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
 
             try {
@@ -459,7 +459,7 @@ export async function traerEmpresasWebSearch(req: Request, res: Response): Promi
         if (req.header('APP-Signature') == 'renzo') {
             let busquedabody = req.body.busqueda;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
 
             try {
@@ -489,7 +489,7 @@ export async function traerProductoWebRuc(req: Request, res: Response): Promise<
         if (req.header('APP-Signature') == 'renzo') {
             let rucbody = req.body.ruc;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             try {
                 const conn = await database.conexionObtener();
@@ -562,7 +562,7 @@ export async function traerProductoWebSearch(req: Request, res: Response): Promi
             let rucbody = req.body.ruc;
             let busquedabody = req.body.busqueda;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             try {
                 const conn = await database.conexionObtener();

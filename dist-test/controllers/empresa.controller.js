@@ -32,7 +32,7 @@ function Empresas(req, res) {
             let busqueda = req.query.Busqueda || '';
             let departamento = req.query.DepartamentoUbicacion;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/empresas/";
             let rutaFinal = servidor + rutaAlmacenamiento;
@@ -114,7 +114,7 @@ function EmpresaProductos(req, res) {
             let idProductoCategoria = req.query.IdProductoCategoria;
             try {
                 let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
                 let rutaAlmacenamiento = "/img/productos/";
                 let rutaFinal = servidor + rutaAlmacenamiento;
@@ -140,7 +140,7 @@ function EmpresaConsultaSistema(req, res) {
             let idEmpresa = req.query.IdEmpresa;
             try {
                 let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
                 let conn = yield database.conexionObtener();
                 let resultadoEmpresa = yield conn.query("SELECT TieneSistema,FacturaUrl FROM Gen_Empresa WHERE IdEmpresa =" + idEmpresa);
@@ -227,7 +227,7 @@ function ClienteAnuncios(req, res) {
         if (req.query.Departamento != undefined) {
             let departamento = req.query.Departamento;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/anuncios/";
             let rutaFinal = servidor + rutaAlmacenamiento;
@@ -275,7 +275,7 @@ function EmpresasDirecta(req, res) {
             let idCategoria = req.query.IdCategoria;
             let departamento = req.query.Departamento;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/empresas/";
             let rutaFinal = servidor + rutaAlmacenamiento;

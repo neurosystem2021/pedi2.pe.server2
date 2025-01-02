@@ -22,7 +22,7 @@ function getProductos(req, res) {
             if (req.header('APP-Signature') == 'renzo') {
                 let ruc = req.params.ruc;
                 let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
                 try {
                     const conn = yield database.conexionObtener();
@@ -52,7 +52,7 @@ function getPromociones(req, res) {
         if (req.header('APP-Signature') != undefined && req.body.code != undefined) {
             if (req.header('APP-Signature') == 'renzo') {
                 let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
                 try {
                     const conn = yield database.conexionObtener();

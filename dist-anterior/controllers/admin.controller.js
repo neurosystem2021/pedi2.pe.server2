@@ -168,7 +168,7 @@ function Empresas(req, res) {
             let busqueda = req.query.Busqueda || '';
             let departamento = req.query.DepartamentoUbicacion;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/empresas/";
             let rutaFinal = servidor + rutaAlmacenamiento;
@@ -201,7 +201,7 @@ function EmpresasIds(req, res) {
             let anulado = '' + req.query.Anulado;
             let ubicacion = '' + req.query.Ubicacion;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/empresas/";
             let rutaFinal = servidor + rutaAlmacenamiento;
@@ -267,7 +267,7 @@ function Anuncios(req, res) {
         if (req.query.Departamento != undefined) {
             let departamento = req.query.Departamento;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/anuncios/";
             let rutaFinal = servidor + rutaAlmacenamiento;
@@ -1110,7 +1110,7 @@ function ProductosEmpresa(req, res) {
             let busqueda = req.query.Busqueda || '';
             try {
                 let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
                 let rutaAlmacenamiento = "/img/productos/";
                 let rutaFinal = servidor + rutaAlmacenamiento;
@@ -1575,7 +1575,7 @@ function PedidosTotal(req, res) {
         if (req.query.DepartamentoUbicacion != undefined) {
             let departamentoUbicacion = req.query.DepartamentoUbicacion;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/empresas/";
             let rutaFinal = servidor + rutaAlmacenamiento;

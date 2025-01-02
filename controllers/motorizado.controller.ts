@@ -38,7 +38,7 @@ export async function EmpresasMotorizado(req: Request, res: Response): Promise<R
     if(req.query.IdMotorizado != undefined){
         let idMotorizado = req.query.IdMotorizado
         let serve = req.headers.host;
-        let protocolo = req.protocol + "://";
+        let protocolo = "https://";
         let servidor = protocolo + serve;
         let rutaAlmacenamiento = "/img/empresas/";
         let rutaFinal = servidor + rutaAlmacenamiento;

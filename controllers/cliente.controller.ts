@@ -76,7 +76,7 @@ export async function PedidoClienteExisteDetalle(req: Request, res: Response): P
 
         let idCliente = req.query.IdCliente;
         let serve = req.headers.host;
-        let protocolo = req.protocol + "://";
+        let protocolo = "https://";
         let servidor = protocolo + serve;
         let rutaAlmacenamiento = "/img/empresas/";
         let rutaFinal = servidor + rutaAlmacenamiento;
@@ -636,7 +636,7 @@ export async function ProductosBusqueda(req: Request, res: Response): Promise<Re
         let busqueda = req.query.Busqueda || '';
         try {
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/productos/";
             let rutaFinal = servidor + rutaAlmacenamiento;

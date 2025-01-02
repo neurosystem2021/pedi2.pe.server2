@@ -23,7 +23,7 @@ export async function CodigoQR(req: Request, res: Response): Promise<Response> {
     try {
         if (fs.existsSync(path.join(__dirname,'..','public','qr.png'))) {
             let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
     
                 return res.json({ success: true, msg:"Qr Generado", url:servidor+"/qr.png"});

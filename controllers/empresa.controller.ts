@@ -9,7 +9,7 @@ export async function Empresas(req: Request, res: Response): Promise<Response> {
         let busqueda = req.query.Busqueda || '';
         let departamento = req.query.DepartamentoUbicacion;
         let serve = req.headers.host;
-        let protocolo = req.protocol + "://";
+        let protocolo = "https://";
         let servidor = protocolo + serve;
         let rutaAlmacenamiento = "/img/empresas/";
         let rutaFinal = servidor + rutaAlmacenamiento;
@@ -98,7 +98,7 @@ export async function EmpresaProductos(req: Request, res: Response): Promise<Res
         let idProductoCategoria = req.query.IdProductoCategoria;
         try {
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/productos/";
             let rutaFinal = servidor + rutaAlmacenamiento;
@@ -122,7 +122,7 @@ export async function EmpresaConsultaSistema(req: Request, res: Response): Promi
         let idEmpresa = req.query.IdEmpresa;
         try {
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let conn = await database.conexionObtener();
             let resultadoEmpresa = await conn.query("SELECT TieneSistema,FacturaUrl FROM Gen_Empresa WHERE IdEmpresa ="+idEmpresa);
@@ -223,7 +223,7 @@ export async function ClienteAnuncios(req: Request, res: Response): Promise<Resp
     if(req.query.Departamento != undefined){
         let departamento = req.query.Departamento;
         let serve = req.headers.host;
-        let protocolo = req.protocol + "://";
+        let protocolo = "https://";
         let servidor = protocolo + serve;
         let rutaAlmacenamiento = "/img/anuncios/";
         let rutaFinal = servidor + rutaAlmacenamiento;
@@ -278,7 +278,7 @@ export async function EmpresasDirecta(req: Request, res: Response): Promise<Resp
         let idCategoria = req.query.IdCategoria;
         let departamento = req.query.Departamento;
         let serve = req.headers.host;
-        let protocolo = req.protocol + "://";
+        let protocolo = "https://";
         let servidor = protocolo + serve;
         let rutaAlmacenamiento = "/img/empresas/";
         let rutaFinal = servidor + rutaAlmacenamiento;

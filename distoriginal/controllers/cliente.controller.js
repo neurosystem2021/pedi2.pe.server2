@@ -130,7 +130,7 @@ function PedidoClienteExisteDetalle(req, res) {
         if (req.query.IdCliente != undefined) {
             let idCliente = req.query.IdCliente;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             let rutaAlmacenamiento = "/img/empresas/";
             let rutaFinal = servidor + rutaAlmacenamiento;
@@ -678,7 +678,7 @@ function ProductosBusqueda(req, res) {
             let busqueda = req.query.Busqueda || '';
             try {
                 let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
                 let rutaAlmacenamiento = "/img/productos/";
                 let rutaFinal = servidor + rutaAlmacenamiento;

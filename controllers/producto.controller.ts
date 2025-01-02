@@ -8,7 +8,7 @@ export async function getProductos(req: Request, res: Response): Promise<Respons
         if(req.header('APP-Signature')=='renzo'){
             let ruc = req.params.ruc;
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             try {
                 const conn = await database.conexionObtener();
@@ -34,7 +34,7 @@ export async function getPromociones(req: Request, res: Response): Promise<Respo
     if (req.header('APP-Signature') != undefined && req.body.code !=undefined) {
         if(req.header('APP-Signature')=='renzo'){
             let serve = req.headers.host;
-            let protocolo = req.protocol + "://";
+            let protocolo = "https://";
             let servidor = protocolo + serve;
             try {
                 const conn = await database.conexionObtener();

@@ -38,7 +38,7 @@ function CodigoQR(req, res) {
         try {
             if (fs_1.default.existsSync(path_1.default.join(__dirname, '..', 'public', 'qr.png'))) {
                 let serve = req.headers.host;
-                let protocolo = req.protocol + "://";
+                let protocolo = "https://";
                 let servidor = protocolo + serve;
                 return res.json({ success: true, msg: "Qr Generado", url: servidor + "/qr.png" });
             }
